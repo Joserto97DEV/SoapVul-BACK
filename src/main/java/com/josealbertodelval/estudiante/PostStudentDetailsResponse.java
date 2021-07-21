@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.05.20 a las 04:39:51 PM CEST 
+// Generado el: 2021.07.21 a las 06:09:29 PM CEST 
 //
 
 
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Student" type="{http://www.josealbertodelval.com/estudiante}Student"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name"
+    "student"
 })
-@XmlRootElement(name = "StudentDetailsRequest")
-public class StudentDetailsRequest {
+@XmlRootElement(name = "PostStudentDetailsResponse")
+public class PostStudentDetailsResponse {
 
-    @XmlElement(required = true)
-    protected String name;
+    @XmlElement(name = "Student", required = true)
+    protected Student student;
 
     /**
-     * Obtiene el valor de la propiedad name.
+     * Obtiene el valor de la propiedad student.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Student }
      *     
      */
-    public String getName() {
-        return name;
+    public Student getStudent() {
+        return student;
     }
 
     /**
-     * Define el valor de la propiedad name.
+     * Define el valor de la propiedad student.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Student }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setStudent(Student value) {
+        this.student = value;
     }
 
 }
