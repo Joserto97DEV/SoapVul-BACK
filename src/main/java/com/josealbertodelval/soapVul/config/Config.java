@@ -15,27 +15,46 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @Configuration
 public class Config extends WsConfigurerAdapter {
+
 	@Bean
 	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext(applicationContext);
 		servlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean(servlet, "/service/*");
+		return new ServletRegistrationBean(servlet, "/services/*");
 	}
 
-	@Bean(name = "estudiante")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema) {
+	@Bean(name = "student")
+	public DefaultWsdl11Definition defaultWsdl11Definition() {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("DetallePuertoEstudiante");
-		wsdl11Definition.setLocationUri("/service/detalle-estudiante");
+		wsdl11Definition.setLocationUri("/services/student");
 		wsdl11Definition.setTargetNamespace("http://www.josealbertodelval.com/estudiante");
-		wsdl11Definition.setSchema(schema);
+		wsdl11Definition.setSchema(studentSchema());
+		return wsdl11Definition;
+	}
+	
+	@Bean(name = "film")
+	public DefaultWsdl11Definition defaultWsdl11Definition2() {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("FilmDetailsPort");
+		wsdl11Definition.setLocationUri("/services/film");
+		wsdl11Definition.setTargetNamespace("http://www.josealbertodelval.com/film");
+		wsdl11Definition.setSchema(filmSchema());
 		return wsdl11Definition;
 	}
 
-	@Bean
+	@Bean(name = "studentSchema")
 	public XsdSchema studentSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("estudiante.xsd"));
 	}
-
+	
+	@Bean(name = "filmSchema")
+	public XsdSchema filmSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("film.xsd"));
+	}
+	
+	
+	
+	
 }
