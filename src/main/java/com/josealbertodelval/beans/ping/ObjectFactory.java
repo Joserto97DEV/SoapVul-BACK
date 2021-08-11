@@ -6,7 +6,7 @@
 //
 
 
-package com.josealbertodelval.beans.film;
+package com.josealbertodelval.beans.ping;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.josealbertodelval.beans.film package. 
+ * generated in the com.josealbertodelval.beans.ping package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,34 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.josealbertodelval.beans.film
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.josealbertodelval.beans.ping
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetFilmByDirectorResponse }
+     * Create an instance of {@link GetPingIpRequest }
      * 
      */
-    public GetFilmByDirectorResponse createGetFilmByDirectorResponse() {
-        return new GetFilmByDirectorResponse();
+    public GetPingIpRequest createGetPingIpRequest() {
+        return new GetPingIpRequest();
     }
 
     /**
-     * Create an instance of {@link Film }
+     * Create an instance of {@link GetPingResultResponse }
      * 
      */
-    public Film createFilm() {
-        return new Film();
-    }
-
-    /**
-     * Create an instance of {@link GetFilmByDirectorRequest }
-     * 
-     */
-    public GetFilmByDirectorRequest createGetFilmByDirectorRequest() {
-        return new GetFilmByDirectorRequest();
+    public GetPingResultResponse createGetPingResultResponse() {
+        return new GetPingResultResponse();
     }
 
 }

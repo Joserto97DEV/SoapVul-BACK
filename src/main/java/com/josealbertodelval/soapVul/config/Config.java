@@ -43,6 +43,16 @@ public class Config extends WsConfigurerAdapter {
 		wsdl11Definition.setSchema(filmSchema());
 		return wsdl11Definition;
 	}
+	
+	@Bean(name = "ping")
+	public DefaultWsdl11Definition defaultWsdl11Definition3() {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("PingDetailsPort");
+		wsdl11Definition.setLocationUri("/services/ping");
+		wsdl11Definition.setTargetNamespace("http://www.josealbertodelval.com/ping");
+		wsdl11Definition.setSchema(pingSchema());
+		return wsdl11Definition;
+	}
 
 	@Bean(name = "studentSchema")
 	public XsdSchema studentSchema() {
@@ -52,6 +62,11 @@ public class Config extends WsConfigurerAdapter {
 	@Bean(name = "filmSchema")
 	public XsdSchema filmSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("film.xsd"));
+	}
+	
+	@Bean(name = "pingSchema")
+	public XsdSchema pingSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("ping.xsd"));
 	}
 	
 	

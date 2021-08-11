@@ -5,5 +5,5 @@
 // Generado el: 2021.08.11 a las 06:46:38 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.josealbertodelval.com/beans/film", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.josealbertodelval.beans.film;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.josealbertodelval.com/beans/ping", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.josealbertodelval.beans.ping;

@@ -6,10 +6,8 @@
 //
 
 
-package com.josealbertodelval.beans.film;
+package com.josealbertodelval.beans.ping;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -27,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Films" type="{http://www.josealbertodelval.com/beans/film}Film" maxOccurs="unbounded"/>
+ *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,41 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "films"
+    "result"
 })
-@XmlRootElement(name = "GetFilmByDirectorResponse")
-public class GetFilmByDirectorResponse {
+@XmlRootElement(name = "GetPingResultResponse")
+public class GetPingResultResponse {
 
-    @XmlElement(name = "Films", required = true)
-    protected List<Film> films;
+    @XmlElement(required = true)
+    protected String result;
 
     /**
-     * Gets the value of the films property.
+     * Obtiene el valor de la propiedad result.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the films property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFilms().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Film }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public List<Film> getFilms() {
-        if (films == null) {
-            films = new ArrayList<Film>();
-        }
-        return this.films;
+    public String getResult() {
+        return result;
+    }
+
+    /**
+     * Define el valor de la propiedad result.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setResult(String value) {
+        this.result = value;
     }
 
 }

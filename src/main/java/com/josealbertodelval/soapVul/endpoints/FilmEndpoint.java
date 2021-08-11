@@ -30,14 +30,6 @@ public class FilmEndpoint {
 		
 		
 		GetFilmByDirectorResponse response = new GetFilmByDirectorResponse();
-		/*Film film = new Film();
-		film.setDirector("pedro ramirez");
-		film.setId(1);
-		film.setTitle("TORRENTE");
-		film.setYear("2021");
-		
-		response.getFilms().add(film);
-		response.getFilms().add(film);*/
 		
 		List<Film> films =new ArrayList<Film>();
 		try{
