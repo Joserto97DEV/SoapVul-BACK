@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.08.11 a las 06:46:38 PM CEST 
+// Generado el: 2021.08.12 a las 07:06:11 PM CEST 
 //
 
 
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Result" type="{http://www.josealbertodelval.com/beans/ping}PingRes"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,18 +41,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetPingResultResponse")
 public class GetPingResultResponse {
 
-    @XmlElement(required = true)
-    protected String result;
+    @XmlElement(name = "Result", required = true)
+    protected PingRes result;
 
     /**
      * Obtiene el valor de la propiedad result.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link PingRes }
      *     
      */
-    public String getResult() {
+    public PingRes getResult() {
         return result;
     }
 
@@ -61,10 +61,10 @@ public class GetPingResultResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link PingRes }
      *     
      */
-    public void setResult(String value) {
+    public void setResult(PingRes value) {
         this.result = value;
     }
 

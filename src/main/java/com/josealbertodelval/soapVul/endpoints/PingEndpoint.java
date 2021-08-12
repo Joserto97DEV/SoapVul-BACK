@@ -10,6 +10,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.josealbertodelval.beans.ping.GetPingIpRequest;
 import com.josealbertodelval.beans.ping.GetPingResultResponse;
+import com.josealbertodelval.beans.ping.PingRes;
 import com.josealbertodelval.soapVul.services.PingService;
 
 @Endpoint
@@ -29,7 +30,9 @@ public class PingEndpoint {
 		
 		try{
 			String pingResult= pingService.doPing(request.getIpNumber());
-			response.setResult(pingResult);
+			PingRes res = new PingRes();
+			res.setResult(pingResult);
+			response.setResult(res);
 			return response;
 		}catch(IOException e) {
 			return null;
