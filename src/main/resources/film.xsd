@@ -11,8 +11,40 @@ elementFormDefault="qualified">
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <xs:element name="GetFilmByDirectorSafeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="director" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <xs:element name="GetFilmByDirectorResponse">
+        <xs:complexType>
+            <xs:sequence >
+                <xs:element name="Films" type="tns:Film" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+     <xs:element name="GetFilmByDirectorSafeResponse">
+        <xs:complexType>
+            <xs:sequence >
+                <xs:element name="Films" type="tns:Film" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="GetFilmByParamsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ParamsArray" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="GetFilmByParamsResponse">
         <xs:complexType>
             <xs:sequence >
                 <xs:element name="Films" type="tns:Film" maxOccurs="unbounded"/>

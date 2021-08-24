@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.08.12 a las 07:06:11 PM CEST 
+// Generado el: 2021.08.24 a las 07:39:14 PM CEST 
 //
 
 
@@ -37,6 +37,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetFilmByParamsRequest }
+     * 
+     */
+    public GetFilmByParamsRequest createGetFilmByParamsRequest() {
+        return new GetFilmByParamsRequest();
+    }
+
+    /**
      * Create an instance of {@link GetFilmByDirectorResponse }
      * 
      */
@@ -50,6 +58,30 @@ public class ObjectFactory {
      */
     public Film createFilm() {
         return new Film();
+    }
+
+    /**
+     * Create an instance of {@link GetFilmByDirectorSafeResponse }
+     * 
+     */
+    public GetFilmByDirectorSafeResponse createGetFilmByDirectorSafeResponse() {
+        return new GetFilmByDirectorSafeResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetFilmByDirectorSafeRequest }
+     * 
+     */
+    public GetFilmByDirectorSafeRequest createGetFilmByDirectorSafeRequest() {
+        return new GetFilmByDirectorSafeRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetFilmByParamsResponse }
+     * 
+     */
+    public GetFilmByParamsResponse createGetFilmByParamsResponse() {
+        return new GetFilmByParamsResponse();
     }
 
     /**

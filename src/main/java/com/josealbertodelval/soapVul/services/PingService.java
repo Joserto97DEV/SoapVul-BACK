@@ -10,25 +10,36 @@ import org.springframework.stereotype.Service;
 @Service
 public class PingService {
 
-	public String doPing(String ipNumber) throws IOException {
+	public String doPing(String ipNumber, Boolean safe) throws IOException {
 
 		String cmd = "ping -c 1 "+ipNumber;
 		Process process;
 		
-		if(isLinux()){
-	        process = Runtime.getRuntime().exec(new String[] {"/bin/sh", "-c", cmd}, null);
+		if(safe) {
+			process = Runtime.getRuntime().exec(cmd);
 			InputStream inputStream = process.getInputStream();
 			Scanner s = new Scanner(inputStream).useDelimiter("\\A");
 			String toReturn = s.hasNext() ? s.next() : "";
 			return toReturn;
+		}
+		
+		else {
+			if(isLinux()){
+		        process = Runtime.getRuntime().exec(new String[] {"/bin/sh", "-c", cmd}, null);
+				InputStream inputStream = process.getInputStream();
+				Scanner s = new Scanner(inputStream).useDelimiter("\\A");
+				String toReturn = s.hasNext() ? s.next() : "";
+				return toReturn;
 
-	    }else if(isWindows()){
-	        process = Runtime.getRuntime().exec("cmd /c start " + cmd);
-			InputStream inputStream = process.getInputStream();
-			Scanner s = new Scanner(inputStream).useDelimiter("\\A");
-			String toReturn = s.hasNext() ? s.next() : "";
-			return toReturn;
-	    }
+		    }else if(isWindows()){
+		        process = Runtime.getRuntime().exec("cmd /c start " + cmd);
+				InputStream inputStream = process.getInputStream();
+				Scanner s = new Scanner(inputStream).useDelimiter("\\A");
+				String toReturn = s.hasNext() ? s.next() : "";
+				return toReturn;
+		    }
+		}
+		
 		
 		return null;
 	}

@@ -23,13 +23,13 @@ public class PingEndpoint {
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetPingIpRequest")
 	@ResponsePayload
-	public GetPingResultResponse getPingByip(@RequestPayload GetPingIpRequest request){
+	public GetPingResultResponse getPingIpRequest(@RequestPayload GetPingIpRequest request){
 		
 		
 		GetPingResultResponse response = new GetPingResultResponse();
 		
 		try{
-			String pingResult= pingService.doPing(request.getIpNumber());
+			String pingResult= pingService.doPing(request.getIpNumber(),request.isIsSafe());
 			PingRes res = new PingRes();
 			res.setResult(pingResult);
 			response.setResult(res);
@@ -39,4 +39,6 @@ public class PingEndpoint {
 
 		}
 	}
+	
+	
 }

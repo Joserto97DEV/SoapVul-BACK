@@ -17,6 +17,15 @@ public class FilmService {
 	public List<Film> getFilmByDirector(String director) {
 		return filmDao.findByDirector(director);
 	}
+
+	public List<Film> getFilmByParams(List<String> paramsArray) {
+		return filmDao.findByParams(paramsArray);
+	}
+
+	public List<Film> getFilmByDirector2(String director) {
+		return filmDao.findByDirector2(director);
+
+	}
 	
 	
 }

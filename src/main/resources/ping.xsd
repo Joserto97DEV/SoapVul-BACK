@@ -8,6 +8,7 @@ elementFormDefault="qualified">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="ipNumber" type="xs:string"/>
+                <xs:element name="isSafe" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

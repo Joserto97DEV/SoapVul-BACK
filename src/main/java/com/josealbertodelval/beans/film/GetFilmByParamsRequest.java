@@ -6,8 +6,10 @@
 //
 
 
-package com.josealbertodelval.beans.ping;
+package com.josealbertodelval.beans.film;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,8 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ipNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="isSafe" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="ParamsArray" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,54 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "ipNumber",
-    "isSafe"
+    "paramsArray"
 })
-@XmlRootElement(name = "GetPingIpRequest")
-public class GetPingIpRequest {
+@XmlRootElement(name = "GetFilmByParamsRequest")
+public class GetFilmByParamsRequest {
 
-    @XmlElement(required = true)
-    protected String ipNumber;
-    protected boolean isSafe;
-
-    /**
-     * Obtiene el valor de la propiedad ipNumber.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getIpNumber() {
-        return ipNumber;
-    }
+    @XmlElement(name = "ParamsArray", required = true)
+    protected List<String> paramsArray;
 
     /**
-     * Define el valor de la propiedad ipNumber.
+     * Gets the value of the paramsArray property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIpNumber(String value) {
-        this.ipNumber = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad isSafe.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the paramsArray property.
      * 
-     */
-    public boolean isIsSafe() {
-        return isSafe;
-    }
-
-    /**
-     * Define el valor de la propiedad isSafe.
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getParamsArray().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
      * 
      */
-    public void setIsSafe(boolean value) {
-        this.isSafe = value;
+    public List<String> getParamsArray() {
+        if (paramsArray == null) {
+            paramsArray = new ArrayList<String>();
+        }
+        return this.paramsArray;
     }
 
 }

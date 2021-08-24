@@ -6,8 +6,10 @@
 //
 
 
-package com.josealbertodelval.beans.student;
+package com.josealbertodelval.beans.film;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Student" type="{http://www.josealbertodelval.com/beans/student}Student"/>
+ *         &lt;element name="Films" type="{http://www.josealbertodelval.com/beans/film}Film" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "student"
+    "films"
 })
-@XmlRootElement(name = "PostStudentDetailsResponse")
-public class PostStudentDetailsResponse {
+@XmlRootElement(name = "GetFilmByParamsResponse")
+public class GetFilmByParamsResponse {
 
-    @XmlElement(name = "Student", required = true)
-    protected Student student;
-
-    /**
-     * Obtiene el valor de la propiedad student.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Student }
-     *     
-     */
-    public Student getStudent() {
-        return student;
-    }
+    @XmlElement(name = "Films", required = true)
+    protected List<Film> films;
 
     /**
-     * Define el valor de la propiedad student.
+     * Gets the value of the films property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Student }
-     *     
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the films property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFilms().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Film }
+     * 
+     * 
      */
-    public void setStudent(Student value) {
-        this.student = value;
+    public List<Film> getFilms() {
+        if (films == null) {
+            films = new ArrayList<Film>();
+        }
+        return this.films;
     }
 
 }

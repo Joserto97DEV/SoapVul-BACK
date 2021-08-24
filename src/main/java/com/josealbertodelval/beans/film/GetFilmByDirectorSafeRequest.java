@@ -6,7 +6,7 @@
 //
 
 
-package com.josealbertodelval.beans.student;
+package com.josealbertodelval.beans.film;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Student" type="{http://www.josealbertodelval.com/beans/student}Student"/>
+ *         &lt;element name="director" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "student"
+    "director"
 })
-@XmlRootElement(name = "PostStudentDetailsResponse")
-public class PostStudentDetailsResponse {
+@XmlRootElement(name = "GetFilmByDirectorSafeRequest")
+public class GetFilmByDirectorSafeRequest {
 
-    @XmlElement(name = "Student", required = true)
-    protected Student student;
+    @XmlElement(required = true)
+    protected String director;
 
     /**
-     * Obtiene el valor de la propiedad student.
+     * Obtiene el valor de la propiedad director.
      * 
      * @return
      *     possible object is
-     *     {@link Student }
+     *     {@link String }
      *     
      */
-    public Student getStudent() {
-        return student;
+    public String getDirector() {
+        return director;
     }
 
     /**
-     * Define el valor de la propiedad student.
+     * Define el valor de la propiedad director.
      * 
      * @param value
      *     allowed object is
-     *     {@link Student }
+     *     {@link String }
      *     
      */
-    public void setStudent(Student value) {
-        this.student = value;
+    public void setDirector(String value) {
+        this.director = value;
     }
 
 }
