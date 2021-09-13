@@ -23,16 +23,6 @@ public class Config extends WsConfigurerAdapter {
 		servlet.setTransformWsdlLocations(true);
 		return new ServletRegistrationBean(servlet, "/services/*");
 	}
-
-	@Bean(name = "student")
-	public DefaultWsdl11Definition defaultWsdl11Definition() {
-		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("DetallePuertoEstudiante");
-		wsdl11Definition.setLocationUri("/services/student");
-		wsdl11Definition.setTargetNamespace("http://www.josealbertodelval.com/estudiante");
-		wsdl11Definition.setSchema(studentSchema());
-		return wsdl11Definition;
-	}
 	
 	@Bean(name = "film")
 	public DefaultWsdl11Definition defaultWsdl11Definition2() {
@@ -54,11 +44,6 @@ public class Config extends WsConfigurerAdapter {
 		return wsdl11Definition;
 	}
 
-	@Bean(name = "studentSchema")
-	public XsdSchema studentSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("estudiante.xsd"));
-	}
-	
 	@Bean(name = "filmSchema")
 	public XsdSchema filmSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("film.xsd"));
